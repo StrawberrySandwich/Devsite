@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
 //
 import { Link, Router } from 'components/Router'
@@ -13,11 +13,11 @@ addPrefetchExcludes(['dynamic'])
 
 function App() {
 
-  var isDarkMode = true
+  const [isDarkMode, setIsDarkMode] = useState()
 
   const onSwapTheme = () => {
-    isDarkMode = !isDarkMode
-    console.log(isDarkMode)
+    setIsDarkMode(!isDarkMode)
+    //console.log(isDarkMode)
   }
 
   return (

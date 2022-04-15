@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'components/Router'
 
-import ThemeButton from './ThemeButton'
 import NavLink from './NavLink'
 import logo from '../ss1t.png'
 
@@ -18,7 +17,9 @@ export default function Header(props) {
         <NavLink className="menu" to="/about">About</NavLink>
         <NavLink className="menu" to="/blog">Blog</NavLink>
         <NavLink className="menu" to="/contact">Contact</NavLink>
-        <ThemeButton isDarkMode={props.isDarkMode} onClick={props.onSwapTheme}/>
+        <div className="menu" style={{cursor: 'pointer'}} onClick={props.onSwapTheme}>
+          {props.isDarkMode ? 'Dark' :'Light'}
+        </div>
       </div>
     </nav>
   )
